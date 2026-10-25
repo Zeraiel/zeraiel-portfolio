@@ -1,8 +1,7 @@
 # Zeraiel — сайт-портфолио
 
 Одностраничный сайт: HTML, CSS и немного JavaScript без сборки и зависимостей. Форма заявок
-работает через небольшую функцию Cloudflare Pages (`functions/api/contact.js`), которая пересылает
-сообщение в Telegram.
+работает через небольшой Cloudflare Worker (`src/`), который пересылает сообщение в Telegram.
 
 ## Возможности
 
@@ -20,8 +19,11 @@ style.css                  все стили
 js/config.js               ВАШИ НАСТРОЙКИ: ссылки, контакты, пути к картинкам
 js/translations.js         все тексты, русский и английский
 js/main.js                 поведение: язык, тема, меню, ссылки, форма
-functions/api/contact.js   приём формы и отправка в Telegram (Cloudflare Pages Function, адрес /api/contact)
-_headers                   заголовки безопасности и кеш шрифтов (Cloudflare Pages)
+src/worker.js              Worker: обрабатывает только адреса /api/*
+src/contact.js             приём формы и отправка в Telegram (POST /api/contact)
+wrangler.jsonc             настройки Cloudflare (имя Worker, папка с сайтом)
+.assetsignore              какие файлы НЕ публиковать как часть сайта
+_headers                   заголовки безопасности и кеш шрифтов
 .dev.vars.example          образец секретов для локального запуска
 assets/fonts/              шрифты и их лицензии
 assets/projects/           сюда класть скриншоты проектов
@@ -38,35 +40,40 @@ assets/projects/           сюда класть скриншоты проект
 
 Если токен где-то засветился (скриншот, публичный репозиторий), отправьте `/revoke` в @BotFather и используйте новый.
 
-## 2. Опубликовать на Cloudflare Pages
+## 2. Опубликовать на Cloudflare (Workers)
 
 1. Создайте на GitHub репозиторий и загрузите в него содержимое этой папки (корень репозитория — там, где лежит `index.html`).
-   `.dev.vars` в репозиторий попадать не должен, он уже в `.gitignore`.
-2. На dash.cloudflare.com откройте **Workers & Pages → Create → Pages → Connect to Git** и выберите репозиторий.
-3. Параметры сборки: **Framework preset — None**, **Build command — пусто**, **Build output directory — `/`** (или `.`).
-4. После первого деплоя откройте проект → **Settings → Variables and Secrets** и добавьте для Production (кнопка **Encrypt/Secret**):
+   Файл `.dev.vars` в репозиторий попадать не должен, он уже в `.gitignore`.
+2. На dash.cloudflare.com откройте **Workers & Pages → Create application** и подключите репозиторий.
+   Имя проекта должно быть таким же, как `name` в `wrangler.jsonc` (`zeraiel-portfolio`). Build command оставьте пустой,
+   Deploy command: `npx wrangler deploy`.
+3. После деплоя откройте ваш Worker → **Settings → Variables and Secrets** и добавьте переменные типа **Secret**:
    - `TELEGRAM_BOT_TOKEN` — токен бота,
    - `TELEGRAM_CHAT_ID` — ваш chat id.
-5. Нажмите **Deployments → … → Retry deployment** (или сделайте любой коммит): переменные применяются при следующем деплое.
-6. Откройте `https://<имя-проекта>.pages.dev`, отправьте тестовую заявку. Сообщение должно прийти в Telegram.
+
+   Именно тип **Secret**: обычные переменные, заданные только в панели, могут стираться при следующем деплое из репозитория.
+4. Сайт открывается по адресу `https://zeraiel-portfolio.<ваш-аккаунт>.workers.dev`. Отправьте тестовую заявку:
+   сообщение должно прийти в Telegram.
+
+Каждый `git push` в основную ветку публикует новую версию автоматически.
 
 ### Необязательно: лимит «5 заявок в час»
 
 Скрытое поле и таймер заполнения отсекают большинство ботов. Если нужен ещё и лимит по посетителю:
 
-1. **Storage & Databases → KV → Create** — создайте хранилище, например `contact-rate`.
-2. В проекте **Settings → Bindings → Add → KV namespace**: имя переменной **`RATE_LIMIT`**, выберите созданное хранилище.
-3. Передеплойте. Теперь с одного IP принимается не больше 5 заявок в час и не чаще раза в 20 секунд.
+1. **Storage & databases → KV → Create** — создайте хранилище, например `contact-rate`, и скопируйте его **ID**.
+2. В `wrangler.jsonc` раскомментируйте строку с `kv_namespaces` и вставьте ID (запятую перед ней оставьте).
+3. Сделайте commit и push. Теперь с одного IP принимается не больше 5 заявок в час и не чаще раза в 20 секунд.
 
 ## 3. Проверить локально
 
 Нужен Node.js. Скопируйте `.dev.vars.example` в `.dev.vars`, впишите токен и chat id, затем:
 
 ```bash
-npx wrangler pages dev .
+npx wrangler dev
 ```
 
-Откройте адрес из консоли (обычно http://localhost:8788). Простое открытие `index.html` с диска форму не проверит:
+Откройте адрес из консоли (обычно http://localhost:8787). Простое открытие `index.html` с диска форму не проверит:
 функция работает только под сервером.
 
 ## Что делает функция
