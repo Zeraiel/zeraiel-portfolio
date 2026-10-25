@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="theme-color" content="#101110" id="themeColor" />
+  <title>Zeraiel — Web Developer</title>
+  <meta name="description" id="metaDescription" content="Zeraiel — web developer: business-card sites, landing pages, WordPress themes and catalogs." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Zeraiel — Web Developer" />
+  <meta property="og:description" content="Fast, responsive websites: business-card sites, landing pages, WordPress themes and catalogs." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23101110'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='18' font-weight='700' text-anchor='middle' fill='%23c5f467'%3E%7B%7D%3C/text%3E%3C/svg%3E" />
+  <link rel="preload" href="assets/fonts/manrope.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/plex-mono-400.woff2" as="font" type="font/woff2" crossorigin />
+  <script>
+    (function () {
+      var theme = "dark";
+      try {
+        var saved = localStorage.getItem("theme");
+        if (saved === "light" || saved === "dark") theme = saved;
+        else if (window.matchMedia && matchMedia("(prefers-color-scheme: light)").matches) theme = "light";
+      } catch (e) {}
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- Site header -->
+  <header class="header">
+    <a class="logo" href="#home" aria-label="Zeraiel home">
+      <span class="logo-brace">{</span>
+      Zeraiel
+      <span class="logo-brace">}</span>
+      <i></i>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#about" data-i18n="navAbout">About</a>
+      <a href="#services" data-i18n="navServices">Services</a>
+      <a href="#projects" data-i18n="navProjects">Projects</a>
+      <a href="#contact" data-i18n="navContact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="lang-switch" id="langToggle" type="button" aria-label="Switch language">RU <span>/</span> <b>EN</b></button>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Light theme" aria-pressed="false">
+        <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+      </button>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero section-wrap" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">
+          <span class="status-dot"></span>
+          <span data-i18n="availability">AVAILABLE FOR PROJECTS</span>
+        </p>
+        <h1 id="heroHeading" data-i18n="heroTitle">Web Developer <span class="muted">&</span><br><span class="accent">WordPress</span> Specialist<span class="period">.</span></h1>
+        <p class="hero-description" data-i18n="heroText">I build fast, responsive websites: business-card sites, landing pages and product catalogs. I write custom WordPress themes, lay out designs and handle small PHP, JS and SQL tasks.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projects">
+            <span data-i18n="viewWork">Explore my work</span>
+            <span class="arrow">↗</span>
+          </a>
+          <a class="button button-secondary" href="#contact" data-i18n="getInTouch">Get in touch</a>
+        </div>
+        <div class="hero-meta">
+          <span class="mono">HTML · CSS · JS · PHP</span>
+          <span class="scroll-hint">
+            <span class="scroll-line"></span>
+            <span data-i18n="scroll">SCROLL TO EXPLORE</span>
+          </span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="visual-grid"></div>
+        <div class="portrait-card">
+          <div class="portrait-top"><span>PROFILE_001</span><span class="live-indicator" data-i18n="liveLabel">● ONLINE</span></div>
+          <div class="portrait-art" id="portraitArt" role="img" aria-label="Illustration of a developer">
+            <div class="orb orb-one"></div>
+            <div class="orb orb-two"></div>
+            <div class="portrait-head"></div>
+            <div class="portrait-neck"></div>
+            <div class="portrait-body"></div>
+            <div class="portrait-shine"></div>
+            <span class="portrait-symbol">&lt;/&gt;</span>
+          </div>
+          <div class="portrait-bottom">
+            <div><strong>Zeraiel</strong><span data-i18n="portraitRole">Web Developer</span></div>
+            <span class="portrait-index">01 / 03</span>
+          </div>
+        </div>
+        <div class="floating-tag tag-code"><span class="tag-dot"></span> <span data-i18n="tagReply">replies within a day</span></div>
+        <div class="floating-tag tag-location"><span aria-hidden="true">⌖</span> <span data-i18n="tagLocation">Minsk, BY / Remote</span></div>
+        <div class="crosshair crosshair-one" aria-hidden="true">+</div>
+        <div class="crosshair crosshair-two" aria-hidden="true">+</div>
+      </div>
+      <div class="hero-bottom-line">
+        <span data-i18n="bottomLeft">INDEPENDENT DEVELOPER</span>
+        <span data-i18n="bottomMid">DESIGN-MINDED. CODE-FOCUSED.</span>
+        <span>© 2026</span>
+      </div>
+    </section>
+    <section class="about section-wrap section-pad" id="about">
+      <div class="section-heading">
+        <p class="eyebrow">
+          <span class="section-number">01</span>
+          <span data-i18n="aboutEyebrow">A LITTLE ABOUT ME</span>
+        </p>
+        <span class="heading-line"></span>
+      </div>
+      <div class="about-grid">
+        <h2 data-i18n="aboutTitle">Turning ideas<br>into <span class="accent">digital</span><br>experiences.</h2>
+        <div class="about-content">
+          <p class="large-copy" data-i18n="aboutText">Hey! I'm a web developer who enjoys turning ideas into useful, well-crafted web products. I understand the full development cycle — from semantic markup to database setup — and care about the details that make a site feel right.</p>
+          <p class="small-copy" data-i18n="aboutSubtext">My approach is simple: thoughtful structure, maintainable code, and an experience that works beautifully on every screen.</p>
+          <div class="stack-block">
+            <span class="stack-label" data-i18n="stackLabel">MY TOOLKIT</span>
+            <div class="stack-list">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>JavaScript</span>
+              <span>PHP</span>
+              <span>MySQL</span>
+              <span>WordPress</span>
+              <span>Git</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="services section-wrap section-pad" id="services">
+      <div class="section-heading">
+        <p class="eyebrow">
+          <span class="section-number">02</span>
+          <span data-i18n="servicesEyebrow">WHAT I CAN DO</span>
+        </p>
+        <span class="heading-line"></span>
+      </div>
+      <div class="section-title-row">
+        <h2 data-i18n="servicesTitle">Services<span class="period">.</span></h2>
+        <p data-i18n="servicesIntro">Practical solutions, built around your goals.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service-card">
+          <div class="service-top">
+            <span class="service-icon">&lt;/&gt;</span>
+            <span class="service-count">01 / 03</span>
+          </div>
+          <h3 data-i18n="service1Title">Business-card sites<br>&amp; landing pages</h3>
+          <p data-i18n="service1">Clear one-page sites and small multi-page sites: responsive layout, a contact form and basic SEO.</p>
+          <div class="service-tags">
+            <span>Responsive</span>
+            <span>Forms</span>
+            <span>SEO</span>
+          </div>
+        </article>
+        <article class="service-card featured">
+          <div class="service-top">
+            <span class="service-icon">W<span class="wp-dot">P</span></span>
+            <span class="service-count">02 / 03</span>
+          </div>
+          <h3 data-i18n="service2Title">Catalog sites<br>on WordPress</h3>
+          <p data-i18n="service2">Catalogs of products or services: categories, filters, item pages and an order request instead of online payment.</p>
+          <div class="service-tags">
+            <span>WordPress</span>
+            <span>Catalog</span>
+            <span>Themes</span>
+          </div>
+        </article>
+        <article class="service-card">
+          <div class="service-top">
+            <span class="service-icon">⌘</span>
+            <span class="service-count">03 / 03</span>
+          </div>
+          <h3 data-i18n="service3Title">Small tasks<br>&amp; fixes</h3>
+          <p data-i18n="service3">Layout from a design (Figma, PSD), edits to existing WordPress themes, small PHP and JS scripts, slow SQL query fixes.</p>
+          <div class="service-tags">
+            <span>HTML/CSS</span>
+            <span>PHP</span>
+            <span>SQL</span>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="projects section-wrap section-pad" id="projects">
+      <div class="section-heading">
+        <p class="eyebrow">
+          <span class="section-number">03</span>
+          <span data-i18n="projectsEyebrow">SELECTED WORK</span>
+        </p>
+        <span class="heading-line"></span>
+      </div>
+      <div class="section-title-row">
+        <h2 data-i18n="projectsTitle">Projects<span class="period">.</span></h2>
+        <p data-i18n="projectsIntro">A few concepts demonstrating my approach.</p>
+      </div>
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-image coffee-image" data-project="coffee">
+            <div class="browser-bar">
+              <span></span>
+              <span></span>
+              <span></span>
+              <b>morrow.coffee</b>
+            </div>
+            <div class="coffee-content">
+              <span class="mock-kicker">SLOW MORNINGS CLUB</span>
+              <strong>Good coffee.<br>Better days.</strong>
+              <span class="mock-button">DISCOVER OUR BLEND ↗</span>
+            </div>
+            <div class="coffee-cup">
+              <div class="cup-handle"></div>
+              <div class="cup-liquid"></div>
+            </div>
+            <span class="image-index">01</span>
+          </div>
+          <div class="project-info">
+            <div class="project-title-row">
+              <h3 data-i18n="project1Title">Custom WordPress Theme</h3>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+            </div>
+            <p data-i18n="project1Text">A warm, editorial website concept for a neighborhood coffee shop. Custom theme architecture, reusable templates, and responsive layouts.</p>
+            <div class="project-tags">
+              <span>WordPress</span>
+              <span>PHP</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="#" data-link="coffeeDemo" hidden data-i18n="liveDemo">Live Demo <span>↗</span></a>
+              <a href="#" data-link="coffeeRepo" hidden>GitHub <span>↗</span></a>
+            </div>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-image landing-image" data-project="landing">
+            <div class="landing-nav">
+              <b>FORME<span>.</span></b>
+              <span>STUDIO&nbsp;&nbsp;&nbsp; WORK&nbsp;&nbsp;&nbsp; CONTACT</span>
+            </div>
+            <div class="landing-main">
+              <span class="mock-kicker">DIGITAL DESIGN STUDIO</span><strong>Less, but<br><i>better.</i></strong>
+              <div class="landing-circle">↗</div>
+            </div>
+            <div class="landing-footer">
+              <span>INDEPENDENT CREATIVE STUDIO</span>
+              <span>SCROLL TO EXPLORE ↓</span>
+            </div>
+            <span class="image-index">02</span>
+          </div>
+          <div class="project-info">
+            <div class="project-title-row">
+              <h3><span data-i18n="project2Title">Responsive Landing Page</span> <span class="concept-badge" data-i18n="concept">CONCEPT</span></h3>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+            </div>
+            <p data-i18n="project2Text">A clean landing page concept with fluid layouts, subtle scroll interactions, and a mobile-friendly navigation pattern.</p>
+            <div class="project-tags">
+              <span>HTML5</span>
+              <span>CSS Grid</span>
+              <span>JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="#" data-link="landingDemo" hidden data-i18n="liveDemo">Live Demo <span>↗</span></a>
+              <a href="#" data-link="landingRepo" hidden>GitHub <span>↗</span></a>
+            </div>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-image app-image" data-project="app">
+            <div class="app-window">
+              <div class="app-sidebar">
+                <b>◈</b>
+                <span class="active"></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="app-main">
+                <div class="app-top">
+                  <span>WORKSPACE / TASKS</span>
+                  <span>•••</span>
+                </div>
+                <h4>Good morning<span>.</span></h4>
+                <p>Here's your focus for today.</p>
+                <div class="task-row">
+                  <i class="checked">✓</i>
+                  <span>Plan project structure</span>
+                  <b>DONE</b>
+                </div>
+                <div class="task-row">
+                  <i></i>
+                  <span>Build dashboard layout</span>
+                  <b>IN PROGRESS</b>
+                </div>
+                <div class="task-row">
+                  <i></i>
+                  <span>Connect database</span>
+                  <b>NEXT UP</b>
+                </div>
+                <div class="app-progress"><span></span></div>
+                <small>2 OF 5 TASKS COMPLETE</small>
+              </div>
+            </div>
+            <span class="image-index">03</span>
+          </div>
+          <div class="project-info">
+            <div class="project-title-row">
+              <h3><span data-i18n="project3Title">Mini App &amp; SQL Database</span> <span class="concept-badge" data-i18n="concept">CONCEPT</span></h3>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+            </div>
+            <p data-i18n="project3Text">A task manager concept with create, edit, and delete workflows, designed to connect a PHP interface to persistent MySQL data.</p>
+            <div class="project-tags">
+              <span>PHP</span>
+              <span>MySQL</span>
+              <span>CRUD</span>
+            </div>
+            <div class="project-links">
+              <a href="#" data-link="appDemo" hidden data-i18n="liveDemo">Live Demo <span>↗</span></a>
+              <a href="#" data-link="appRepo" hidden>GitHub <span>↗</span></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="contact section-wrap section-pad" id="contact">
+      <div class="contact-panel">
+        <div class="contact-orbit orbit-a"></div>
+        <div class="contact-orbit orbit-b"></div>
+        <div class="contact-content">
+          <p class="eyebrow">
+            <span class="section-number">04</span>
+            <span data-i18n="contactEyebrow">HAVE AN IDEA?</span>
+          </p>
+          <h2 data-i18n="contactTitle">Have a project<br>in mind<span class="accent">?</span><br><span class="contact-italic">Let's talk.</span></h2>
+          <p data-i18n="contactText">Tell me what you're building. I'm always open to interesting ideas and collaborations.</p>
+          <form class="contact-form" id="contactForm" method="post" novalidate hidden>
+            <div class="form-grid">
+              <div class="field">
+                <label for="cfName" data-i18n="formName">Name</label>
+                <input id="cfName" name="name" type="text" autocomplete="name" required minlength="2" maxlength="80" aria-describedby="cfNameError" />
+                <p class="field-error" id="cfNameError"></p>
+              </div>
+              <div class="field">
+                <label for="cfContact" data-i18n="formContact">How to reach you</label>
+                <input id="cfContact" name="contact" type="text" autocomplete="off" required minlength="3" maxlength="120" data-i18n-placeholder="formContactPh" aria-describedby="cfContactError" />
+                <p class="field-error" id="cfContactError"></p>
+              </div>
+              <div class="field">
+                <label for="cfType" data-i18n="formType">Project type</label>
+                <select id="cfType" name="type" required aria-describedby="cfTypeError"><option value="site" data-i18n="typeSite">Business-card site or landing page</option><option value="catalog" data-i18n="typeCatalog">Catalog site</option><option value="task" data-i18n="typeTask">Small task or fix</option><option value="other" data-i18n="typeOther">Something else</option></select>
+                <p class="field-error" id="cfTypeError"></p>
+              </div>
+              <div class="field">
+                <label for="cfBudget" data-i18n="formBudget">Budget and deadline (optional)</label>
+                <input id="cfBudget" name="budget" type="text" autocomplete="off" maxlength="80" aria-describedby="cfBudgetError" />
+                <p class="field-error" id="cfBudgetError"></p>
+              </div>
+              <div class="field field-wide">
+                <label for="cfMessage" data-i18n="formMessage">About your project</label>
+                <textarea id="cfMessage" name="message" rows="5" required minlength="10" maxlength="2000" aria-describedby="cfMessageError"></textarea>
+                <p class="field-error" id="cfMessageError"></p>
+              </div>
+            </div>
+            <div class="field-trap" aria-hidden="true"><label>Company<input type="text" name="company" tabindex="-1" autocomplete="off" /></label></div>
+            <p class="form-note" data-i18n="formNote">Your message is delivered to me in Telegram and used only to reply to you.</p>
+            <div class="form-actions">
+              <button class="button button-primary" type="submit" id="formSubmit"><span data-i18n="formSend">Send message</span><span class="arrow" aria-hidden="true">↗</span></button>
+              <a class="button button-secondary" href="#" data-contact="telegram" hidden target="_blank" rel="noreferrer">
+                <span data-i18n="telegram">Message on Telegram</span>
+                <span class="arrow" aria-hidden="true">↗</span>
+              </a>
+            </div>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+        <div class="contact-side">
+          <span class="side-label" data-i18n="connectLabel">LET'S CONNECT</span>
+          <a href="#" data-contact="github" hidden target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          <a href="#" data-contact="email" hidden>Email <span aria-hidden="true">↗</span></a>
+          <a href="#" data-contact="jobbers" hidden target="_blank" rel="noreferrer">Jobbers <span aria-hidden="true">↗</span></a>
+          <div class="contact-coordinate">53°54' N<br>27°34' E</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer section-wrap">
+    <a class="logo" href="#home">
+      <span class="logo-brace">{</span>
+      Zeraiel
+      <span class="logo-brace">}</span>
+      <i></i>
+    </a>
+    <span data-i18n="footerText">Designed with intent. Built with care.</span>
+    <a href="#home" class="back-top"><span data-i18n="backTop">BACK TO TOP</span> ↑</a>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
