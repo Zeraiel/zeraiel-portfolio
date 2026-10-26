@@ -26,5 +26,5 @@ wrangler.jsonc             настройки Cloudflare (имя Worker, пап�
 _headers                   заголовки безопасности и кеш шрифтов
 .dev.vars.example          образец секретов для локального запуска
 assets/fonts/              шрифты и их лицензии
-assets/projects/           сюда класть скриншоты проектов
+assets/projects/           сюда класть скриншоты проектов.
 ```
