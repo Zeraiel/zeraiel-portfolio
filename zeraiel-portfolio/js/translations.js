@@ -34,10 +34,10 @@ window.SiteText = {
       service1Title: "Business-card sites<br>&amp; landing pages",
       service1:
         "Clear one-page sites and small multi-page sites: responsive layout, a contact form and basic SEO.",
-      service2Title: "Catalog sites<br>on WordPress",
+      service2Title: "on WordPress",
       service2:
         "Catalogs of products or services: categories, filters, item pages and an order request instead of online payment.",
-      service3Title: "Small tasks<br>&amp; fixes",
+      service3Title: "Small tasks <br>&amp; fixes",
       service3:
         "Layout from a design (Figma, PSD), edits to existing WordPress themes, small PHP and JS scripts, slow SQL query fixes.",
       projectsEyebrow: "SELECTED WORK",
@@ -108,13 +108,13 @@ window.SiteText = {
       servicesEyebrow: "ЧЕМ Я МОГУ ПОМОЧЬ",
       servicesTitle: 'Услуги<span class="period">.</span>',
       servicesIntro: "Практичные решения под ваши задачи.",
-      service1Title: "Сайты-визитки<br>и лендинги",
+      service1Title: "Сайты-визитки <br>и лендинги",
       service1:
         "Понятные одностраничные и небольшие многостраничные сайты: адаптивная вёрстка, форма заявки и базовое SEO.",
-      service2Title: "Каталоги<br>на WordPress",
+      service2Title: "Каталоги <br>на WordPress",
       service2:
         "Каталоги товаров и услуг: категории, фильтры, карточки позиций и заявка вместо онлайн-оплаты.",
-      service3Title: "Небольшие<br>задачи и правки",
+      service3Title: "Небольшие <br>задачи и правки",
       service3:
         "Вёрстка по макету (Figma, PSD), правки в готовых темах WordPress, небольшие скрипты на PHP и JS, ускорение медленных SQL-запросов.",
       projectsEyebrow: "ИЗБРАННЫЕ РАБОТЫ",
