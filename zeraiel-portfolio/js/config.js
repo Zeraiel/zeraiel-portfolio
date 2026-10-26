@@ -9,7 +9,7 @@ window.SiteConfig = {
       coffeeDemo: "", 
       coffeeRepo: "https://github.com/Zeraiel/custom-WP-theme",
       landingDemo: "",
-      landingRepo: "",
+      landingRepo: "https://github.com/Zeraiel/zeraiel-portfolio",
       appDemo: "https://taskflow-php.freehosting.dev/?i=1",
       appRepo: "https://github.com/Zeraiel/taskflow",
     },
