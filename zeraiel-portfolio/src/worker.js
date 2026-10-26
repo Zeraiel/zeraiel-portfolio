@@ -1,9 +1,6 @@
 import { handleContact } from './contact.js';
 
-/**
- * Worker запускается только для адресов /api/* (см. run_worker_first в wrangler.jsonc).
- * Все остальные запросы Cloudflare отдаёт напрямую как статичные файлы сайта.
- */
+
 export default {
   async fetch(request, env) {
     const { pathname } = new URL(request.url);
