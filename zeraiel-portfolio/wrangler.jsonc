@@ -1,19 +1,13 @@
+
 {
-  // Имя должно совпадать с именем Worker в Cloudflare.
   "name": "zeraiel-portfolio",
   "main": "src/worker.js",
   "compatibility_date": "2025-10-01",
-
-  // Файлы сайта берутся из корня репозитория. Лишнее исключено в .assetsignore.
+  "keep_vars": true,
   "assets": {
     "directory": ".",
     "run_worker_first": ["/api/*"]
   },
-
   "workers_dev": true,
   "preview_urls": false
-
-  // Необязательный лимит заявок: создайте KV (Storage & databases → KV → Create),
-  // раскомментируйте блок ниже и впишите id хранилища. Подробности в README.
-  // ,"kv_namespaces": [{ "binding": "RATE_LIMIT", "id": "ВСТАВЬТЕ_ID_ХРАНИЛИЩА" }]
 }
