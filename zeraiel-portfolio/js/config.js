@@ -1,17 +1,17 @@
 window.SiteConfig = {
   site: {
     telegram: "https://t.me/Alexondi",
-    formEndpoint: "/api/contact",
+    formEndpoint: "/api/contact", 
     github: "https://github.com/Zeraiel",
     email: "lexbernat@gmail.com", 
     jobbers: "", 
     projects: {
-      coffeeDemo: "", 
+      coffeeDemo: "https://github.com/Zeraiel/custom-WP-theme", 
       coffeeRepo: "https://github.com/Zeraiel/custom-WP-theme",
       landingDemo: "",
-      landingRepo: "https://github.com/Zeraiel/zeraiel-portfolio",
-      appDemo: "https://taskflow-php.freehosting.dev/?i=1",
-      appRepo: "https://github.com/Zeraiel/taskflow",
+      landingRepo: "",
+      appDemo: "",
+      appRepo: "",
     },
     
     projectImages: {
