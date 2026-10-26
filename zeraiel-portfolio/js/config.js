@@ -6,12 +6,12 @@ window.SiteConfig = {
     email: "lexbernat@gmail.com", 
     jobbers: "", 
     projects: {
-      coffeeDemo: "https://github.com/Zeraiel/custom-WP-theme", 
+      coffeeDemo: "", 
       coffeeRepo: "https://github.com/Zeraiel/custom-WP-theme",
       landingDemo: "",
       landingRepo: "",
-      appDemo: "",
-      appRepo: "",
+      appDemo: "https://taskflow-php.freehosting.dev/?i=1",
+      appRepo: "https://github.com/Zeraiel/taskflow",
     },
     
     projectImages: {
