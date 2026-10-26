@@ -1,15 +1,3 @@
-/**
- * Приём заявок с формы и пересылка в Telegram. Адрес: POST /api/contact (маршрутизирует src/worker.js).
- * Заменяет прежний api/contact.php: те же проверки и те же ответы, которые ждёт js/main.js.
- *
- * Секреты (Cloudflare → ваш Worker → Settings → Variables and Secrets, тип Secret):
- *   TELEGRAM_BOT_TOKEN   токен бота от @BotFather
- *   TELEGRAM_CHAT_ID     ваш chat id
- * Необязательно:
- *   ALLOWED_ORIGINS      другие сайты, которым можно слать форму, через запятую
- *   RATE_LIMIT           привязка KV-хранилища: включает лимит «5 заявок в час, не чаще раза в 20 секунд»
- *   TELEGRAM_API_BASE    другой адрес Bot API (для тестов); по умолчанию https://api.telegram.org
- */
 
 const MAX_BODY_BYTES = 20000;
 const MIN_FILL_MS = 2500;
@@ -35,7 +23,6 @@ function respond(status, body, extraHeaders = {}) {
   });
 }
 
-/** Длина в символах (а не в UTF-16 единицах), как mb_strlen в PHP-версии. */
 function textLength(text) {
   return Array.from(text).length;
 }
@@ -52,7 +39,6 @@ function cleanText(value, singleLine) {
   return result.trim();
 }
 
-/** Экранирование для Telegram HTML: только & < > */
 function tgEscape(text) {
   return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
@@ -63,10 +49,7 @@ async function sha256Hex(text) {
   return Array.from(new Uint8Array(hash), (b) => b.toString(16).padStart(2, '0')).join('');
 }
 
-/**
- * Возвращает null, если можно отправлять, или число секунд до следующей попытки.
- * Без привязки KV лимит отключён (форма всё равно закрыта скрытым полем и таймером).
- */
+
 async function rateLimit(request, env) {
   const kv = env.RATE_LIMIT;
   if (!kv || typeof kv.get !== 'function') return null;
@@ -191,7 +174,6 @@ export async function handleContact(request, env) {
     return respond(400, { ok: false, error: 'bad_request' });
   }
 
-  // Скрытое поле: люди его не заполняют, боты заполняют. Делаем вид, что всё получилось.
   if (cleanText(data.company, true) !== '') {
     return respond(200, { ok: true });
   }
