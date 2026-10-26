@@ -7,10 +7,10 @@ window.SiteConfig = {
     jobbers: "", 
     projects: {
       coffeeDemo: "https://github.com/Zeraiel/custom-WP-theme", 
-      coffeeRepo: "https://github.com/Zeraiel/custom-WP-theme",
+      coffeeRepo: "",
       landingDemo: "",
-      landingRepo: "",
-      appDemo: "",
+      landingRepo: "https://github.com/Zeraiel/zeraiel-portfolio",
+      appDemo: "https://taskflow-php.freehosting.dev/?i=1",
       appRepo: "",
     },
     
