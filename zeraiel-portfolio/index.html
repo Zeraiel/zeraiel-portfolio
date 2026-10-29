@@ -340,45 +340,16 @@
           </p>
           <h2 data-i18n="contactTitle">Have a project<br>in mind<span class="accent">?</span><br><span class="contact-italic">Let's talk.</span></h2>
           <p data-i18n="contactText">Tell me what you're building. I'm always open to interesting ideas and collaborations.</p>
-          <form class="contact-form" id="contactForm" method="post" novalidate hidden>
-            <div class="form-grid">
-              <div class="field">
-                <label for="cfName" data-i18n="formName">Name</label>
-                <input id="cfName" name="name" type="text" autocomplete="name" required minlength="2" maxlength="80" aria-describedby="cfNameError" />
-                <p class="field-error" id="cfNameError"></p>
-              </div>
-              <div class="field">
-                <label for="cfContact" data-i18n="formContact">How to reach you</label>
-                <input id="cfContact" name="contact" type="text" autocomplete="off" required minlength="3" maxlength="120" data-i18n-placeholder="formContactPh" aria-describedby="cfContactError" />
-                <p class="field-error" id="cfContactError"></p>
-              </div>
-              <div class="field">
-                <label for="cfType" data-i18n="formType">Project type</label>
-                <select id="cfType" name="type" required aria-describedby="cfTypeError"><option value="site" data-i18n="typeSite">Business-card site or landing page</option><option value="catalog" data-i18n="typeCatalog">Catalog site</option><option value="task" data-i18n="typeTask">Small task or fix</option><option value="other" data-i18n="typeOther">Something else</option></select>
-                <p class="field-error" id="cfTypeError"></p>
-              </div>
-              <div class="field">
-                <label for="cfBudget" data-i18n="formBudget">Budget and deadline (optional)</label>
-                <input id="cfBudget" name="budget" type="text" autocomplete="off" maxlength="80" aria-describedby="cfBudgetError" />
-                <p class="field-error" id="cfBudgetError"></p>
-              </div>
-              <div class="field field-wide">
-                <label for="cfMessage" data-i18n="formMessage">About your project</label>
-                <textarea id="cfMessage" name="message" rows="5" required minlength="10" maxlength="2000" aria-describedby="cfMessageError"></textarea>
-                <p class="field-error" id="cfMessageError"></p>
-              </div>
-            </div>
-            <div class="field-trap" aria-hidden="true"><label>Company<input type="text" name="company" tabindex="-1" autocomplete="off" /></label></div>
-            <p class="form-note" data-i18n="formNote">Your message is delivered to me in Telegram and used only to reply to you.</p>
-            <div class="form-actions">
-              <button class="button button-primary" type="submit" id="formSubmit"><span data-i18n="formSend">Send message</span><span class="arrow" aria-hidden="true">↗</span></button>
-              <a class="button button-secondary" href="#" data-contact="telegram" hidden target="_blank" rel="noreferrer">
-                <span data-i18n="telegram">Message on Telegram</span>
-                <span class="arrow" aria-hidden="true">↗</span>
-              </a>
-            </div>
-            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-          </form>
+          <div class="form-actions contact-actions">
+            <a class="button button-primary" href="#" data-contact="telegram" hidden target="_blank" rel="noreferrer">
+              <span data-i18n="telegram">Message on Telegram</span>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="button button-secondary" href="#" data-contact="email" hidden>
+              <span data-i18n="emailBtn">Write by email</span>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </a>
+          </div>
         </div>
         <div class="contact-side">
           <span class="side-label" data-i18n="connectLabel">LET'S CONNECT</span>

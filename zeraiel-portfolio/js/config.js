@@ -1,7 +1,6 @@
 window.SiteConfig = {
   site: {
     telegram: "https://t.me/Alexondi",
-    formEndpoint: "/api/contact", 
     github: "https://github.com/Zeraiel",
     email: "lexbernat@gmail.com", 
     jobbers: "", 
