@@ -5,8 +5,8 @@ window.SiteConfig = {
     email: "lexbernat@gmail.com", 
     jobbers: "", 
     projects: {
-      coffeeDemo: "https://github.com/Zeraiel/custom-WP-theme", 
-      coffeeRepo: "",
+      coffeeDemo: "", 
+      coffeeRepo: "https://github.com/Zeraiel/custom-WP-theme",
       landingDemo: "",
       landingRepo: "https://github.com/Zeraiel/zeraiel-portfolio",
       appDemo: "https://taskflow-php.freehosting.dev/index.php",
