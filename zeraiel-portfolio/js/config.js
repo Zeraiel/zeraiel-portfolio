@@ -6,7 +6,7 @@ window.SiteConfig = {
     jobbers: "", 
     projects: {
       coffeeDemo: "", 
-      coffeeRepo: "https://github.com/Zeraiel/custom-WP-theme",
+      coffeeRepo: "https://github.com/Zeraiel/custom-WP-theme ",
       landingDemo: "",
       landingRepo: "https://github.com/Zeraiel/zeraiel-portfolio",
       appDemo: "https://taskflow-php.freehosting.dev/index.php",
