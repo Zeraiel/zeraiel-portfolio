@@ -3,6 +3,7 @@
 Персональный сайт-портфолио: кто я, чем занимаюсь, примеры работ и контакты.
 
 **Демо:** https://zeraiel-portfolio.lexbernat.workers.dev
+**Демо:** https://zeraiel.github.io/zeraiel-portfolio/zeraiel-portfolio/#projects
 
 ## О проекте
 

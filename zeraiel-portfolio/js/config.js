@@ -10,7 +10,7 @@ window.SiteConfig = {
       landingDemo: "",
       landingRepo: "https://github.com/Zeraiel/zeraiel-portfolio",
       appDemo: "https://taskflow-php.freehosting.dev/index.php",
-      appRepo: "https://github.com/Zeraiel/zeraiel-portfolio",
+      appRepo: "https://zeraiel.github.io/zeraiel-portfolio/zeraiel-portfolio/#projects",
     },
     
     projectImages: {
