@@ -1,1 +1,12 @@
 zeraiel-portfolio/.dev.vars.example
+
+# Секреты для локального запуска: никогда не коммитить
+.dev.vars
+
+# Служебные файлы редакторов и системы
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+node_modules/
+.wrangler/
