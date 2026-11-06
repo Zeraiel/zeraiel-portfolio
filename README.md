@@ -19,7 +19,7 @@
 
 - HTML5, CSS3, JavaScript
 - [Использованные приёмы, например CSS Grid, CSS-переменные]
-- Хостинг: Cloudflare Workers
+- Хостинг: Github pages
 - Контроль версий: Git
 
 ## Структура проекта
