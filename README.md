@@ -2,7 +2,7 @@
 
 Персональный сайт-портфолио: кто я, чем занимаюсь, примеры работ и контакты.
 
-**Демо:** https://zeraiel.github.io/zeraiel-portfolio/zeraiel-portfolio/#projects
+**Демо:** https://zeraiel.github.io/zeraiel-portfolio/
 
 ## О проекте
 
